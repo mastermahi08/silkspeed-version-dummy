@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Premium equestrian riding apparel - detailed product specifications, sizing, and features.">
+    <title>Product Details - Silkspeed Race Wear</title>
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/product-detail.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- ========== HEADER / NAVIGATION ========== -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="container">
+                <!-- Logo -->
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="images/logo.png" alt="Silkspeed Race Wear Logo">
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Toggle -->
+                <button class="mobile-menu-toggle" aria-label="Toggle Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <!-- Navigation Links -->
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="wholesale.html">Wholesale</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+
+                <!-- Cart Icon -->
+                <div class="nav-actions">
+                    <a href="checkout.html" class="cart-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M9 2L7 6H2l3 14h14l3-14h-5l-2-4z"/>
+                            <path d="M9 11v4"/>
+                            <path d="M15 11v4"/>
+                        </svg>
+                        <span class="cart-count">0</span>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- ========== BREADCRUMB NAVIGATION ========== -->
+    <section class="breadcrumb">
+        <div class="container">
+            <a href="index.html">Home</a>
+            <span>/</span>
+            <a href="shop.html">Shop</a>
+            <span>/</span>
+            <span id="breadcrumbCategory">Riding Pants</span>
+            <span>/</span>
+            <span id="breadcrumbProduct">Product</span>
+        </div>
+    </section>
+
+    <!-- ========== PRODUCT DETAIL MAIN SECTION ========== -->
+    <section class="product-detail-section">
+        <div class="container">
+            <div class="product-detail-grid">
+                
+                <!-- LEFT COLUMN: Product Images -->
+                <div class="product-images-column">
+                    <!-- Main Product Image -->
+                    <div class="main-image-container">
+                        <img id="mainProductImage" src="images/products/black-pant-front.jpg" alt="Product Image">
+                        
+                        <!-- Image Navigation Arrows -->
+                        <button class="image-nav prev" id="prevImageBtn">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="15 18 9 12 15 6"/>
+                            </svg>
+                        </button>
+                        <button class="image-nav next" id="nextImageBtn">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="9 18 15 12 9 6"/>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <!-- Thumbnail Images -->
+                    <div class="thumbnail-container" id="thumbnailContainer">
+                        <!-- Thumbnails will be generated dynamically -->
+                    </div>
+                </div>
+
+                <!-- RIGHT COLUMN: Product Information -->
+                <div class="product-info-column">
+                    
+                    <!-- Product Name -->
+                    <h1 id="productName">Silkspeed Riding Pants — Summer Performance Series</h1>
+                    
+                    <!-- Product Subtitle -->
+                    <p class="product-subtitle" id="productSubtitle">Lightweight, breathable riding pants designed for flexibility, cooling comfort, and all-day performance.</p>
+                    
+                    <!-- Product Price -->
+                    <div class="price-line">
+                        <span class="product-price" id="productPrice">$119 USD</span>
+                    </div>
+
+                    <!-- Short Description -->
+                    <p class="product-short-desc" id="productShortDesc">
+                        Engineered with 4-way stretch, quick-dry technology, and precision tailoring — built for riders who demand comfort, control, and confidence during warm-weather rides.
+                    </p>
+
+                    <!-- Size Selector -->
+                    <div class="product-option">
+                        <label>Size:</label>
+                        <div class="size-selector" id="sizeSelector">
+                            <button class="size-btn" data-size="XS">XS</button>
+                            <button class="size-btn" data-size="S">S</button>
+                            <button class="size-btn active" data-size="M">M</button>
+                            <button class="size-btn" data-size="L">L</button>
+                            <button class="size-btn" data-size="XL">XL</button>
+                        </div>
+                        <a href="#sizeGuide" class="size-guide-link">View Size Guide →</a>
+                    </div>
+
+                    <!-- Color Selector (Optional - can be hidden if not needed) -->
+                    <div class="product-option" id="colorSelectorContainer" style="display: none;">
+                        <label>Color:</label>
+                        <div class="color-selector" id="colorSelector">
+                            <!-- Colors will be added dynamically if needed -->
+                        </div>
+                    </div>
+
+                    <!-- Quantity Selector -->
+                    <div class="product-option">
+                        <label>Quantity:</label>
+                        <div class="quantity-selector">
+                            <button class="qty-btn" id="decreaseQty">−</button>
+                            <input type="number" id="quantityInput" value="1" min="1" max="10" readonly>
+                            <button class="qty-btn" id="increaseQty">+</button>
+                        </div>
+                    </div>
+
+                    <!-- Add to Cart Button -->
+                    <div class="product-actions">
+                        <button class="btn btn-primary btn-add-cart" id="addToCartBtn">Add to Cart</button>
+                        <button class="btn btn-secondary" id="buyNowBtn">Buy Now</button>
+                    </div>
+
+                    <!-- Trust Indicators -->
+                    <div class="trust-indicators">
+                        <div class="trust-indicator-item">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                                <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                            </svg>
+                            <span>Secure Payments</span>
+                        </div>
+                        <div class="trust-indicator-item">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <path d="M2 12h20"/>
+                            </svg>
+                            <span>Global Shipping Available</span>
+                        </div>
+                        <div class="trust-indicator-item">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                <polyline points="22 4 12 14.01 9 11.01"/>
+                            </svg>
+                            <span>30-Day Fit Guarantee</span>
+                        </div>
+                        <div class="trust-indicator-item">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"/>
+                            </svg>
+                            <span>Easy Returns</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== KEY PRODUCT BENEFITS ========== -->
+    <section class="product-benefits">
+        <div class="container">
+            <h2>Why Riders Love Our Summer Performance Pants</h2>
+            
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </div>
+                    <h3>4-Way Stretch Mobility</h3>
+                    <p>Move freely with maximum flexibility during training and long sessions.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+                        </svg>
+                    </div>
+                    <h3>Breathable Cooling Fabric</h3>
+                    <p>Advanced ventilation reduces heat build-up and keeps you dry.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M8 14s1.5 2 4 2 4-2 4-2"/>
+                            <line x1="9" y1="9" x2="9.01" y2="9"/>
+                            <line x1="15" y1="9" x2="15.01" y2="9"/>
+                        </svg>
+                    </div>
+                    <h3>Moisture-Wicking Technology</h3>
+                    <p>Quick-dry microfiber pulls sweat away from the skin.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                            <path d="M2 17l10 5 10-5"/>
+                        </svg>
+                    </div>
+                    <h3>Precision Tailored Fit</h3>
+                    <p>Sculpted for riding posture — no sagging or restriction.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                            <line x1="9" y1="9" x2="15" y2="15"/>
+                            <line x1="15" y1="9" x2="9" y2="15"/>
+                        </svg>
+                    </div>
+                    <h3>Abrasion-Resistant Paneling</h3>
+                    <p>Engineered to withstand friction, wear, and demanding rides.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                        </svg>
+                    </div>
+                    <h3>Soft-Touch Interior Lining</h3>
+                    <p>Comfort that lasts all day — even during intense movement.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== DETAILED DESCRIPTION ========== -->
+    <section class="detailed-description">
+        <div class="container-narrow">
+            <h2>Product Description</h2>
+            <div class="description-content" id="detailedDescription">
+                <p>The Silkspeed Summer Performance Riding Pants are crafted using breathable, quick-dry microfibers that provide unmatched comfort during warm-weather training. Designed with 4-way stretch and ergonomic panel construction, these pants adapt to your movement, enhancing posture and stability in every ride.</p>
+                <p>Their lightweight feel, reinforced seams, and abrasion-resistant zones make them ideal for both casual riders and professionals seeking consistency, durability, and premium performance.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== TECHNICAL SPECIFICATIONS ========== -->
+    <section class="technical-specs">
+        <div class="container-narrow">
+            <h3>Technical Specifications</h3>
+            <div class="specs-grid">
+                <div class="spec-item">
+                    <span class="spec-label">Fabric:</span>
+                    <span class="spec-value">76% nylon, 24% elastane</span>
+                </div>
+                <div class="spec-item">
+                    <span class="spec-label">Stretch:</span>
+                    <span class="spec-value">4-way dynamic stretch</span>
+                </div>
+                <div class="spec-item">
+                    <span class="spec-label">Breathability:</span>
+                    <span class="spec-value">High airflow knit</span>
+                </div>
+                <div class="spec-item">
+                    <span class="spec-label">Care:</span>
+                    <span class="spec-value">Machine wash cold, air dry</span>
+                </div>
+                <div class="spec-item">
+                    <span class="spec-label">Weight:</span>
+                    <span class="spec-value">Ultra-light summer fabric</span>
+                </div>
+                <div class="spec-item">
+                    <span class="spec-label">Grip Panel:</span>
+                    <span class="spec-value">Silicone-enhanced inner thigh</span>
+                </div>
+                <div class="spec-item">
+                    <span class="spec-label">Fit Type:</span>
+                    <span class="spec-value">Tailored athletic fit</span>
+                </div>
+                <div class="spec-item">
+                    <span class="spec-label">Season:</span>
+                    <span class="spec-value">Ideal for Spring/Summer</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SIZE GUIDE ========== -->
+    <section class="size-guide-section" id="sizeGuide">
+        <div class="container-narrow">
+            <h3>Find Your Perfect Fit</h3>
+            <p>Use our size guide to find your ideal fit. Measurements are in centimeters.</p>
+            
+            <div class="size-table-container">
+                <table class="size-table">
+                    <thead>
+                        <tr>
+                            <th>Size</th>
+                            <th>Waist (cm)</th>
+                            <th>Hip (cm)</th>
+                            <th>Length (cm)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>XS</strong></td>
+                            <td>60-65</td>
+                            <td>82-87</td>
+                            <td>90-92</td>
+                        </tr>
+                        <tr>
+                            <td><strong>S</strong></td>
+                            <td>65-70</td>
+                            <td>87-92</td>
+                            <td>91-93</td>
+                        </tr>
+                        <tr>
+                            <td><strong>M</strong></td>
+                            <td>70-75</td>
+                            <td>92-97</td>
+                            <td>92-94</td>
+                        </tr>
+                        <tr>
+                            <td><strong>L</strong></td>
+                            <td>75-80</td>
+                            <td>97-102</td>
+                            <td>93-95</td>
+                        </tr>
+                        <tr>
+                            <td><strong>XL</strong></td>
+                            <td>80-86</td>
+                            <td>102-108</td>
+                            <td>94-96</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== MATERIAL & FABRIC TECHNOLOGY ========== -->
+    <section class="material-section">
+        <div class="container">
+            <h3>Material Innovation</h3>
+            <p>Crafted from high-performance microfibers designed to balance flexibility, cooling, and durability. Our materials undergo quality testing to ensure stretch recovery, color retention, and long-term resilience.</p>
+            
+            <div class="material-highlights">
+                <div class="material-item">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+                    </svg>
+                    <span>Quick-drying</span>
+                </div>
+                <div class="material-item">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="5"/>
+                        <line x1="12" y1="1" x2="12" y2="3"/>
+                        <line x1="12" y1="21" x2="12" y2="23"/>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+                        <line x1="1" y1="12" x2="3" y2="12"/>
+                        <line x1="21" y1="12" x2="23" y2="12"/>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+                    </svg>
+                    <span>UV resistant</span>
+                </div>
+                <div class="material-item">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                    </svg>
+                    <span>Durable stitching</span>
+                </div>
+                <div class="material-item">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                    </svg>
+                    <span>Breathable mesh zones</span>
+                </div>
+                <div class="material-item">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/>
+                        <polyline points="16 7 22 7 22 13"/>
+                    </svg>
+                    <span>High elasticity</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== DELIVERY & RETURNS ========== -->
+    <section class="delivery-returns">
+        <div class="container-narrow">
+            <h3>Shipping & Returns</h3>
+            <div class="delivery-content">
+                <ul>
+                    <li><strong>Worldwide Shipping Available</strong></li>
+                    <li>Orders processed within <strong>24-48 hours</strong></li>
+                    <li>Delivery timelines displayed at checkout</li>
+                    <li>Easy <strong>30-day returns</strong> on unopened and unused items (conditions apply)</li>
+                </ul>
+                <p><strong>Track Your Order:</strong> You can track your order anytime using your tracking number via <a href="https://www.17track.net" target="_blank">17track.com</a>.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CUSTOMER REVIEWS ========== -->
+    <section class="customer-reviews">
+        <div class="container">
+            <h3>What Riders Are Saying</h3>
+            
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"Lightweight, breathable, and perfectly fitted — these are now my go-to riding pants for training days."</p>
+                    <div class="review-author">
+                        <img src="images/testimonials/avatar-1.jpg" alt="Sophie L.">
+                        <div>
+                            <p class="author-name">Sophie L.</p>
+                            <p class="author-title">Competitive Rider</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"The quality is exceptional. The fit is perfect, and they hold up beautifully even after months of daily use."</p>
+                    <div class="review-author">
+                        <img src="images/testimonials/avatar-2.jpg" alt="Marcus R.">
+                        <div>
+                            <p class="author-name">Marcus R.</p>
+                            <p class="author-title">Dressage Trainer</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"Finally found riding pants that don't restrict movement. The breathability is unmatched during summer rides."</p>
+                    <div class="review-author">
+                        <img src="images/testimonials/avatar-3.jpg" alt="Elena M.">
+                        <div>
+                            <p class="author-name">Elena M.</p>
+                            <p class="author-title">Show Jumper</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CROSS-SELL / RECOMMENDATIONS ========== -->
+    <section class="recommendations">
+        <div class="container">
+            <h3>You May Also Like</h3>
+            
+            <div class="recommendations-grid">
+                <!-- Recommendation 1 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/products/skivvy-long-white.jpg" alt="Long Sleeve Skivvy">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Skivvies</span>
+                        <h3 class="product-name">Silkspeed Long Sleeve Skivvy</h3>
+                        <p class="product-price">$69 USD</p>
+                        <a href="product-detail.html?id=skivvy-long-white" class="btn btn-small">View Details →</a>
+                    </div>
+                </div>
+
+                <!-- Recommendation 2 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/products/skivvy-short-white.jpg" alt="Short Sleeve Skivvy">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Skivvies</span>
+                        <h3 class="product-name">Silkspeed Short Sleeve Skivvy</h3>
+                        <p class="product-price">$59 USD</p>
+                        <a href="product-detail.html?id=skivvy-short-white" class="btn btn-small">View Details →</a>
+                    </div>
+                </div>
+
+                <!-- Recommendation 3 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/products/gloves.jpg" alt="Performance Gloves">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Gloves</span>
+                        <h3 class="product-name">Silkspeed Performance Gloves</h3>
+                        <p class="product-price">$39 USD</p>
+                        <a href="product-detail.html?id=gloves" class="btn btn-small">View Details →</a>
+                    </div>
+                </div>
+
+                <!-- Recommendation 4 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/products/socks-hxy01.jpg" alt="Riding Socks">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Socks</span>
+                        <h3 class="product-name">Premium Riding Socks</h3>
+                        <p class="product-price">$24 USD</p>
+                        <a href="product-detail.html?id=socks-hxy01" class="btn btn-small">View Details →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Column 1: Brand -->
+                <div class="footer-column">
+                    <h4>Silkspeed Race Wear</h4>
+                    <p>Premium equestrian apparel for riders worldwide.</p>
+                </div>
+
+                <!-- Column 2: Customer Care -->
+                <div class="footer-column">
+                    <h4>Customer Care</h4>
+                    <ul>
+                        <li><a href="shipping.html">Shipping & Delivery</a></li>
+                        <li><a href="returns.html">Returns & Exchange</a></li>
+                        <li><a href="order-tracking.html">Order Tracking</a></li>
+                        <li><a href="contact.html">FAQ</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Connect -->
+                <div class="footer-column">
+                    <h4>Connect</h4>
+                    <ul>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="contact.html">Email Support</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 4: Legal -->
+                <div class="footer-column">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="terms.html">Terms & Conditions</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <p>&copy; 2024 Silkspeed Race Wear. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Success Modal (Add to Cart Confirmation) -->
+    <div id="cartModal" class="cart-modal">
+        <div class="cart-modal-content">
+            <div class="cart-modal-icon">
+                <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                    <polyline points="22 4 12 14.01 9 11.01"/>
+                </svg>
+            </div>
+            <h3>Added to Cart!</h3>
+            <p id="cartModalMessage">Product added to your cart successfully.</p>
+            <div class="cart-modal-actions">
+                <button class="btn btn-secondary" onclick="closeCartModal()">Continue Shopping</button>
+                <a href="checkout.html" class="btn btn-primary">View Cart</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript Files -->
+    <script src="js/main.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/product-detail.js"></script>
+
+</body>
+</html>
